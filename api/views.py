@@ -15,6 +15,14 @@ class IndexView(View):
         return render(request, 'api/index.html', context)
 
 
+class QuickStart(View):
+    def get(self, request, *args, **kwargs):
+        context = {
+
+        }
+        return render(request, 'api/quick-start.html', context)
+
+
 class CovidDataView(APIView):
     def get(self, request, *args, **kwargs):
         covid_data = CovidData.objects.filter(
