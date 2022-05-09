@@ -9,7 +9,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS')
 
 
 INSTALLED_APPS = [
@@ -20,6 +20,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'api',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -100,8 +101,6 @@ EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = False
 DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
-
-
 
 
 REST_FRAMEWORK = {
