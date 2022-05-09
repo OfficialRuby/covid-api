@@ -1,0 +1,54 @@
+{
+    "status": 200,
+    "message": "Request successful",
+    "data": [
+        {
+            "deaths": 1405,
+            "fips": "",
+            "admin2": "",
+            "province_state": "",
+            "country_region": "Nigeria",
+            "last_updated": "2021-01-15T05:22:24",
+            "lattitude": "9.082",
+            "longtitude": "8.6753",
+            "confirmed_cases": "105478",
+            "recovered": "83830",
+            "active": "20243",
+            "combined_key": "Nigeria",
+            "incident_rate": "51.16824067373338",
+            "case_fatality_ratio": "1.332031324067578"
+        },
+        {
+            "deaths": 382,
+            "fips": "",
+            "admin2": "",
+            "province_state": "",
+            "country_region": "Nigeria",
+            "last_updated": "2020-06-11T03:33:41",
+            "lattitude": "9.082",
+            "longtitude": "8.6753",
+            "confirmed_cases": "13873",
+            "recovered": "4351",
+            "active": "9140",
+            "combined_key": "Nigeria",
+            "incident_rate": "6.729905789517275",
+            "case_fatality_ratio": "2.753550061270093"
+        },
+        {
+            "deaths": 2117,
+            "fips": "",
+            "admin2": "",
+            "province_state": "",
+            "country_region": "Nigeria",
+            "last_updated": "2021-06-21T04:21:41",
+            "lattitude": "9.082",
+            "longtitude": "8.6753",
+            "confirmed_cases": "167206",
+            "recovered": "163557",
+            "active": "1532",
+            "combined_key": "Nigeria",
+            "incident_rate": "81.11299844604811",
+            "case_fatality_ratio": "1.2661028910445797"
+        }
+    ]
+}

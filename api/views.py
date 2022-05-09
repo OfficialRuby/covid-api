@@ -1,3 +1,4 @@
+from django.core.exceptions import FieldError
 from rest_framework import status
 from django.shortcuts import render
 from django.views.generic import View
@@ -43,9 +44,6 @@ class CovidDataView(APIView):
     def post(self, request, *args, **kwargs):
         params = request.POST
         lenght = 7
-        # Chek if user provided a filter lenght
-        if 'lenght' in params:
-            lenght = params.get('lenght')
         # Check if user has provided date filter
         if 'data_from' and 'data_to' in params:
             param = params.copy()
@@ -56,16 +54,48 @@ class CovidDataView(APIView):
 
             covid_data = CovidData.objects.filter(last_updated__range=(start_date, end_date),)
             if param:
-                for key in param:
-                    print('\n\n')
-                    print(key)
-                    print('\n\n')
-                    listed = [key]
-                    covid_data = covid_data.filter(key=params[key])
+                try:
+                    for key in param:
+                        covid_data = covid_data.filter(**{key: param.get(key)})
+                    if covid_data:
+                        serialize = CovidDataSerializer(covid_data, many=True)
+                        return Response(
+                            {'status': status.HTTP_200_OK,
+                                'message': 'Request successful',
+                                'data': serialize.data}
+                        )
+                except FieldError:
 
-        serialize = CovidDataSerializer(covid_data, many=True)
-        return Response(
-            {'status': status.HTTP_200_OK,
-                'message': 'Request successful',
-             'data': serialize.data}
-        )
+                    return Response(
+                        {'status': status.HTTP_400_BAD_REQUEST,
+                         'message': 'Bad request',
+                         'data': 'Please provide a valid parameter'}
+                    )
+
+        # Else perform a regular filtering
+        else:
+            # Chek if user provided a filter lenght
+            param = params.copy()
+            if 'lenght' in param:
+                lenght = param.pop('lenght')
+                lenght = int(lenght[0])
+            if param:
+                try:
+                    for key in param:
+                        covid_data = CovidData.objects.filter(**{key: param.get(key)})[:lenght]
+                    if covid_data:
+                        if len(covid_data) >= 1:
+                            serialize = CovidDataSerializer(covid_data, many=True)
+                        else:
+                            serialize = CovidDataSerializer(covid_data,)
+                        return Response(
+                            {'status': status.HTTP_200_OK,
+                                'message': 'Request successful',
+                                'data': serialize.data}
+                        )
+                except FieldError as e:
+                    return Response(
+                        {'status': status.HTTP_400_BAD_REQUEST,
+                         'message': 'Bad request',
+                         'data': 'Please provide a valid parameter'}
+                    )

@@ -6,17 +6,14 @@ Home{% endblock title %}
 {% block content %}
 
 
-    <!-- GITHUB BUTTON JS -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 
-    <!--FACEBOOK LIKE BUTTON JAVASCRIPT SDK-->
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous"
         src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0&appId=994736563909741&autoLogAppEvents=1"></script>
 
     <div class="page-wrapper">
 
-        <!-- ******Header****** -->
         <header class="header text-center">
             <div class="container">
                 <div class="branding">
@@ -25,119 +22,91 @@ Home{% endblock title %}
                         <span class="text-highlight">Open Covid</span><span class="text-bold">-19 API</span>
                     </h1>
                 </div>
-                <!--//branding-->
                 <div class="tagline">
                     <p>Free and open covid 19 API endpoint built for developers</p>
                     <p>Designed with <i class="fas fa-heart"></i> for developers</p>
                 </div>
-                <!--//tagline-->
 
                 <div class="main-search-box pt-3 pb-4 d-inline-block">
 
                 </div>
 
             </div>
-            <!--//container-->
         </header>
-        <!--//header-->
 
         <section class="cards-section text-center">
             <div class="container">
                 <h2 class="title">Getting started is easy!</h2>
                 <div class="intro">
-                    <p>Welcome to Open Covid API documentation page. This is is the landing page of the OPEN COVID-19
-                        API documentation.</p>
+                    <p>Welcome to Open Covid API documentation page. This hompage provides quick access to  the OPEN COVID-19 API and it's documentation.</p>
 
                 </div>
-                <!--//intro-->
                 <div id="cards-wrapper" class="cards-wrapper row">
                     <div class="item item-green col-lg-4 col-6">
                         <div class="item-inner">
                             <div class="icon-holder">
                                 <i class="icon fa fa-paper-plane"></i>
                             </div>
-                            <!--//icon-holder-->
                             <h3 class="title">Quick Start</h3>
                             <p class="intro">Get started on how to use the free and open COVID-19 API</p>
                             <a class="link" href="{% url 'doc' %}"><span></span></a>
                         </div>
-                        <!--//item-inner-->
                     </div>
-                    <!--//item-->
                     <div class="item item-pink item-2 col-lg-4 col-6">
                         <div class="item-inner">
                             <div class="icon-holder">
                                 <span aria-hidden="true" class="icon icon_puzzle_alt"></span>
                             </div>
-                            <!--//icon-holder-->
                             <h3 class="title">About</h3>
                             <p class="intro">This is a web application developed by Okwor Dennis Ebuka in partial
                                 fulfilment for the award of Bsc in Computer Science</p>
                         </div>
-                        <!--//item-inner-->
                     </div>
-                    <!--//item-->
                     <div class="item item-blue col-lg-4 col-6">
                         <div class="item-inner">
                             <div class="icon-holder">
                                 <span aria-hidden="true" class="icon icon_chat"></span>
                             </div>
-                            <!--//icon-holder-->
                             <h3 class="title">FAQ</h3>
                             <p class="intro">Have a query for us?, we are open for discussion</p>
                             <a class="link" href="charts.html"><span></span></a>
                         </div>
-                        <!--//item-inner-->
                     </div>
-                    <!--//item-->
                     <div class="item item-purple col-lg-4 col-6">
                         <div class="item-inner">
                             <div class="icon-holder">
                                 <span aria-hidden="true" class="icon icon_currency_alt"></span>
                             </div>
-                            <!--//icon-holder-->
                             <h3 class="title">Sponsors</h3>
                             <p class="intro">Every project requires fund to keep running, be part of our
                                 sponsor, each Naira will go a long way</p>
                             <a class="link" href="faqs.html"><span></span></a>
                         </div>
-                        <!--//item-inner-->
                     </div>
-                    <!--//item-->
                     <div class="item item-primary col-lg-4 col-6">
                         <div class="item-inner">
                             <div class="icon-holder">
                                 <span aria-hidden="true" class="icon icon_tag"></span>
                             </div>
-                            <!--//icon-holder-->
                             <h3 class="title">Credit</h3>
                             <p class="intro">The data used in developing this project is provided by  the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University
                             </p>
                             <a class="link" target='_blank' href="https://github.com/CSSEGISandData/COVID-19"><span></span></a>
                         </div>
-                        <!--//item-inner-->
                     </div>
-                    <!--//item-->
                     <div class="item item-orange col-lg-4 col-6">
                         <div class="item-inner">
                             <div class="icon-holder">
                                 <span aria-hidden="true" class="icon icon_gift"></span>
                             </div>
-                            <!--//icon-holder-->
                             <h3 class="title">License </h3>
                             <p class="intro">This data set is licensed under MIT, without warranty of any kind</p>
                         </div>
-                        <!--//item-inner-->
                     </div>
-                    <!--//item-->
                 </div>
-                <!--//cards-->
 
             </div>
-            <!--//container-->
         </section>
-        <!--//cards-section-->
     </div>
-    <!--//page-wrapper-->
 
 {% endblock content %}
