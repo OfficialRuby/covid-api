@@ -99,3 +99,9 @@ class CovidDataView(APIView):
                          'message': 'Bad request',
                          'data': 'Please provide a valid parameter'}
                     )
+
+        return Response(
+            {'status': status.HTTP_400_BAD_REQUEST,
+                'message': 'Bad request',
+                'data': 'Please provide a valid parameter'}
+        )
