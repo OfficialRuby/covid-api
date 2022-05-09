@@ -9,7 +9,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 DEBUG = True
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS')
+ALLOWED_HOSTS = ['opencovidapi.ml', 'www.opencovidapi.ml', '127.0.0.1', '3.145.177.128', 'localhost']
 
 
 INSTALLED_APPS = [
